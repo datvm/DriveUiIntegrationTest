@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Google Drive Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+
+<body class="pb-5">
+    <div class="container">
+        <p>
+            This page helps provide a Drive file permission to a Google Cloud Project. For more information on how to
+            use and setup,
+            <a href="https://github.com/datvm/DriveUiIntegrationTest" target="_blank">see project README</a>.
+            <br />
+            Everything here happens at your browser, no data is sent to any server except Google's.
+            All the info is stored in your browser's <code>localStorage</code> for convenience.
+        </p>
+
+        <fieldset class="grp-init card mb-3">
+            <div class="card-header">
+                <h4>Project Info</h4>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label for="txt-client-id">Client ID</label>
+                    <input id="txt-client-id" class="form-control" data-oauth="clientId" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="txt-apikey">API Key</label>
+                    <input id="txt-apikey" class="form-control" data-oauth="apiKey" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="txt-proj-no">Project Number</label>
+                    <input id="txt-proj-no" class="form-control" data-oauth="projectNumber" />
+                </div>
+
+                <div>
+                    <label for="txt-scope">Scope (comma-separated)</label>
+                    <input id="txt-scope" class="form-control" data-oauth="scope"
+                        value="https://www.googleapis.com/auth/drive.file" />
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <button class="btn btn-primary btn-create-client">Create Client</button>
+            </div>
+        </fieldset>
+
+        <fieldset class="grp-integration card" disabled>
+            <div class="card-header">
+                <h4>Drive UI Integrate Simulation</h4>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label for="txt-url">App URL</label>
+                    <input id="txt-url" class="form-control" value="https://www.example.com/" />
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <h4>Open With integration</h4>
+
+                        <p>
+                            Open your app URL with a request to
+                            <a target="_blank" href="https://developers.google.com/drive/api/guides/integrate-open">
+                                Handle an Open URL</a>.
+                            You need to pick a file from Drive to grant access permission.
+                        </p>
+
+                        <p>
+                            <button class="btn btn-primary" data-simulate="open">
+                                Simulate Open with Request
+                            </button>
+                        </p>
+                    </div>
+                    <div class="col">
+                        <h4>Create integration</h4>
+
+                        <p>
+                            Open your app URL with a request to
+                            <a target="_blank" href="https://developers.google.com/drive/api/guides/integrate-create">
+                                Handle a New URL</a>.
+                            You need to pick a folder from Drive to grant access permission.
+                        </p>
+
+                        <p>
+                            <button class="btn btn-primary" data-simulate="new">
+                                Simulate New Request
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+
+    <script defer type="module" src="./js/index.js"></script>
+</body>
+
+</html>
