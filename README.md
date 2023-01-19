@@ -1,3 +1,8 @@
+> **Note**  
+> **You do not need to go through the trouble of using this app if you add `https://www.googleapis.com/auth/drive.install` scope (see [this StackOverflow question](https://stackoverflow.com/a/74850447/653457))**
+
+---
+
 App is deployed on GitHub Pages: [https://datvm.github.io/DriveUiIntegrationTest/](https://datvm.github.io/DriveUiIntegrationTest/)
 
 A simple page for testing [Google Drive UI integration](https://developers.google.com/drive/api/guides/about-apps): [Open With](https://developers.google.com/drive/api/guides/integrate-open) and [Create (New)](https://developers.google.com/drive/api/guides/integrate-create) menu.
